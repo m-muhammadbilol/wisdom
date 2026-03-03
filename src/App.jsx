@@ -37,7 +37,7 @@ export default function App() {
       className="max-w-[330px] xl:max-w-[737px] mr-auto ml-auto ">
       <header className="flex pt-[55px] items-center justify-between">
         <div>
-          <img src="./public/book.svg" alt="logo" />
+          <img src="./book.svg" alt="logo" />
         </div>
         <div className="flex gap-[50px] items-center">
           <div>
@@ -157,7 +157,7 @@ export default function App() {
                           onClick={() => {
                             audioRef.current.play();
                           }}
-                          src="./public/musicbtn.svg"
+                          src="./musicbtn.svg"
                           alt=""
                         />
                         <audio ref={audioRef} src={e.audio}>
