@@ -15,6 +15,7 @@ export default function App() {
       .then((res) => {
         if (Array.isArray(res)) {
           setData(res);
+          console.log(res);
         } else {
           setData([]);
         }
@@ -34,7 +35,7 @@ export default function App() {
   return (
     <div
       style={{ fontFamily: font }}
-      className="max-w-[330px] xl:max-w-[737px] mr-auto ml-auto ">
+      className="max-w-[330px] md:max-w-[737px] mr-auto ml-auto ">
       <header className="flex pt-[55px] items-center justify-between">
         <div>
           <img src="./book.svg" alt="logo" />
@@ -140,6 +141,7 @@ export default function App() {
               </p>
             </div>
           )}
+
           {data.map((el, i) => (
             <div key={i} className="pt-[45px]">
               <div className="flex justify-between items-center">
@@ -150,22 +152,22 @@ export default function App() {
                   </h3>
                 </div>
                 <div>
-                  {el.phonetics.map((e, i) => {
-                    return (
-                      <div key={i}>
-                        <img
-                          onClick={() => {
-                            audioRef.current.play();
-                          }}
-                          src="./musicbtn.svg"
-                          alt=""
-                        />
-                        <audio ref={audioRef} src={e.audio}>
-                          <source src={e.audio} />
-                        </audio>
-                      </div>
-                    );
-                  })}
+                  {/* {el.phonetics.map((e, i) => { */}
+                  {/* return ( */}
+                  <div>
+                    <img
+                      onClick={(e) => {
+                        audioRef.current.play();
+                      }}
+                      src="./musicbtn.svg"
+                      alt=""
+                    />
+                    <audio ref={audioRef} src={el.phonetics[0]?.audio}>
+                      <source src={el.phonetics[0]?.audio} />
+                    </audio>
+                  </div>
+                  {/* ); */}
+                  {/* })} */}
                 </div>
               </div>
               <div>
