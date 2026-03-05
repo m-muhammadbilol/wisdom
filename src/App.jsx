@@ -156,14 +156,23 @@ export default function App() {
                   {/* return ( */}
                   <div>
                     <img
+                      className="w-[100px] h-[100px]"
                       onClick={(e) => {
                         audioRef.current.play();
+                        e.target.src = "./pouse.jpg";
+                        setTimeout(() => {
+                          e.target.src = "./musicbtn.svg";
+                        }, 3000);
                       }}
                       src="./musicbtn.svg"
                       alt=""
                     />
-                    <audio ref={audioRef} src={el.phonetics[0]?.audio}>
-                      <source src={el.phonetics[0]?.audio} />
+                    <audio
+                      ref={audioRef}
+                      src={el.phonetics[0]?.audio || el.phonetics.audio}>
+                      <source
+                        src={el.phonetics[0]?.audio || el.phonetics.audio}
+                      />
                     </audio>
                   </div>
                   {/* ); */}
