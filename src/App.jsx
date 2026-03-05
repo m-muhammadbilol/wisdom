@@ -162,7 +162,7 @@ export default function App() {
                         e.target.src = "./pouse.jpg";
                         setTimeout(() => {
                           e.target.src = "./musicbtn.svg";
-                        }, 2f000);
+                        }, 2000);
                       }}
                       src="./musicbtn.svg"
                       alt=""
